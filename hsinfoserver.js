@@ -13,6 +13,11 @@ app.listen(PORT, () => {
     console.log(`Started listening on port `+PORT);
 });
 
+app.get('/', function (req, res) {
+	res.type("application/json");
+	res.send('{"status":"ok"}');
+});
+
 app.get('/getCPU', function (req, res) {
     res.type("application/json");
     si.cpu()
