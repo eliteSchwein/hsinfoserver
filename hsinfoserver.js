@@ -34,9 +34,8 @@ app.get('/getCPUTemp', function (req, res) {
 
 app.get('/getRAM', function (req, res) {
     res.type("application/json");
-    si.memLayout()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.memLayout();
+    res.send(data);
 });
 
 app.get('/getGPU', function (req, res) {
