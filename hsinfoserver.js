@@ -32,7 +32,7 @@ app.get('/getCPUTemp', function (req, res) {
         .catch(error => res.send(error));
 });
 
-app.get('/getRAM', function (req, res) {
+app.get('/getRAM', async function (req, res) {
     res.type("application/json");
     const data = await si.memLayout();
     res.send(data);
