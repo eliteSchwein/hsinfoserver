@@ -18,18 +18,16 @@ app.get('/', function (req, res) {
 	res.send('{"status":"ok"}');
 });
 
-app.get('/getCPU', function (req, res) {
+app.get('/getCPU', async function (req, res) {
     res.type("application/json");
-    si.cpu()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.cpu();
+    res.send(data);
 });
 
-app.get('/getCPUTemp', function (req, res) {
+app.get('/getCPUTemp', async function (req, res) {
     res.type("application/json");
-    si.cpuTemperature()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.cpuTemperature();
+    res.send(data);
 });
 
 app.get('/getRAM', async function (req, res) {
@@ -38,80 +36,69 @@ app.get('/getRAM', async function (req, res) {
     res.send(data);
 });
 
-app.get('/getGPU', function (req, res) {
+app.get('/getGPU', async function (req, res) {
     res.type("application/json");
-    si.graphics()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.graphics();
+    res.send(data);
 });
 
-app.get('/getDisks', function (req, res) {
+app.get('/getDisks', async function (req, res) {
     res.type("application/json");
-    si.diskLayout()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.diskLayout();
+    res.send(data);
 });
 
-app.get('/getNetwork', function (req, res) {
+app.get('/getNetwork', async function (req, res) {
     res.type("application/json");
-    si.networkInterfaces()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.networkInterfaces();
+    res.send(data);
 });
 
-app.get('/getWifi', function (req, res) {
+app.get('/getWifi', async function (req, res) {
     res.type("application/json");
-    si.wifiNetworks()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.wifiNetworks();
+    res.send(data);
 });
 
-app.get('/getOS', function (req, res) {
+app.get('/getOS', async function (req, res) {
     res.type("application/json");
-    si.osInfo()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.osInfo();
+    res.send(data);
 });
 
-app.get('/getPartitions', function (req, res) {
+app.get('/getPartitions', async function (req, res) {
     res.type("application/json");
-    si.fsSize()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.fsSize();
+    res.send(data);
 });
 
-app.get('/getCPULoad', function (req, res) {
+app.get('/getCPULoad', async function (req, res) {
     res.type("application/json");
-    si.currentLoad()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.currentLoad();
+    res.send(data);
 });
 
-app.get('/getRAMLoad', function (req, res) {
+app.get('/getRAMLoad', async function (req, res) {
     res.type("application/json");
-    si.mem()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.mem();
+    res.send(data);
 });
 
-app.get('/getDiskLoad', function (req, res) {
+app.get('/getDiskLoad', async function (req, res) {
     res.type("application/json");
-    si.disksIO()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.disksIO();
+    res.send(data);
 });
 
-app.get('/getNetworkStats', function (req, res) {
+app.get('/getNetworkStats', async function (req, res) {
     res.type("application/json");
-    si.networkStats()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.networkStats();
+    res.send(data);
 });
 
-app.get('/getProcesses', function (req, res) {
+app.get('/getProcesses', async function (req, res) {
     res.type("application/json");
-    si.processes()
-        .then(data => res.send(data))
-        .catch(error => res.send(error));
+    const data = await si.processes();
+    res.send(data);
 });
 
