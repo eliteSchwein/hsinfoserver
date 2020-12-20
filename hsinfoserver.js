@@ -24,6 +24,12 @@ app.get('/getCPU', async function (req, res) {
     res.send(data);
 });
 
+app.get('/getCPUSpeed', async function (req, res) {
+    res.type("application/json");
+    const data = await si.cpuCurrentspeed();
+    res.send(data);
+});
+
 app.get('/getCPUTemp', async function (req, res) {
     res.type("application/json");
     const data = await si.cpuTemperature();
