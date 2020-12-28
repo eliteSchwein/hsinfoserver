@@ -20,6 +20,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "systeminformation": "^4.32.0"
+    "systeminformation": "^4.33.4"
   }
 }
