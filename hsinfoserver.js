@@ -90,9 +90,9 @@ app.get('/getRAMLoad', async function (req, res) {
     res.send(data);
 });
 
-app.get('/getDiskLoad', async function (req, res) {
+app.get('/getFilesystem', async function (req, res) {
     res.type("application/json");
-    const data = await si.disksIO();
+    const data = await si.fsSize();
     res.send(data);
 });
 
