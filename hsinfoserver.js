@@ -18,6 +18,30 @@ app.get('/', function (req, res) {
 	res.send('{"status":"ok"}');
 });
 
+app.get('/getSystem', async function (req, res) {
+    res.type("application/json");
+    const data = await si.system();
+    res.send(data);
+});
+
+app.get('/getBIOS', async function (req, res) {
+    res.type("application/json");
+    const data = await si.bios();
+    res.send(data);
+});
+
+app.get('/getMainboard', async function (req, res) {
+    res.type("application/json");
+    const data = await si.baseboard();
+    res.send(data);
+});
+
+app.get('/getChassis', async function (req, res) {
+    res.type("application/json");
+    const data = await si.chassis();
+    res.send(data);
+});
+
 app.get('/getCPU', async function (req, res) {
     res.type("application/json");
     const data = await si.cpu();
